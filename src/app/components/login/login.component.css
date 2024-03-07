@@ -1,0 +1,184 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+/*===== BASE =====*/
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+}
+
+/*===== FORM =====*/
+.l-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  background-color: #F0F8FF;
+}
+
+.div-container{
+  background-color: white;
+}
+
+.form {
+  width: 360px;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 10px 15px 35px rgba(4, 52, 94, 0.2);
+}
+.form__title {
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+  color: #00416A;
+  text-align: center;
+}
+.form__div {
+  position: relative;
+  height: 52px;
+  margin-bottom: 1.5rem;
+}
+.form__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  border: 2px solid #DADCE0;
+  border-radius: 0.5rem;
+  outline: none;
+  padding: 1rem;
+  background: none;
+  z-index: 1;
+}
+.form__label {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  padding: 0 0.25rem;
+  background-color: #fff;
+  color: #80868B;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+.form__button {
+  display: block;
+  margin-left: auto;
+  padding: 0.75rem 2rem;
+  outline: none;
+  border: none;
+  background-color: #1A73E8;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.form__button:hover {
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
+}
+
+/*Input focus move up label*/
+.form__input:focus + .form__label {
+  top: -0.5rem;
+  left: 0.8rem;
+  color: #1A73E8;
+  font-size: .75rem;
+  font-weight: 500;
+  z-index: 10;
+}
+
+/*Input focus sticky top label*/
+.form__input:not(:placeholder-shown).form__input:not(:focus) + .form__label {
+  top: -0.5rem;
+  left: 0.8rem;
+  z-index: 10;
+  font-size: .75rem;
+  font-weight: 500;
+}
+
+/*Input focus*/
+.form__input:focus {
+  border: 2px solid #1A73E8;
+}
+
+.login-section {
+  height: 100vh;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  :is(__head) {
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  :is(__form) {
+      padding: 24px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+      background-color:#1d1e2c;
+
+      :is(--field) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 16px;
+      }
+
+      :is(--form-element) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+  }
+}
+
+/* Error message container */
+.error-message {
+  color: #ff0000; /* Red color for error messages */
+  font-size: 0.75rem; /* Adjust font size */
+  position: relative; /* Position relative to the input field */
+  top: 100%; /* Move the error message container 5 pixels down from its original position */
+}
+
+/* Error message */
+.error-message span {
+  font-weight: 500; /* Bold font weight for emphasis */
+}
+
+.error-message-incorrect{
+  color: #ff0000; /* Red color for error messages */
+  font-size: 0.75rem; /* Adjust font size */
+  position: relative; /* Position relative to the input field */
+  top: 120%; /* Move the error message container 5 pixels down from its original position */
+  margin-top: 10%;
+}
+
+.form__button:disabled {
+  cursor: not-allowed;
+}
+
+.form__button:disabled + .message {
+  display: block;
+}
+
+.message {
+  display: none;
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}

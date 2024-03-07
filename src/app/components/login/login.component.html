@@ -1,0 +1,35 @@
+<div class="l-form form-container">
+  <form #myForm="ngForm" class="form div-container" (ngSubmit)="authenticateUser()">
+      <h1 class="form__title">BRP</h1>
+
+      <div class="form__div">
+          <input type="text" class="form__input" placeholder=" " [(ngModel)]="loginFormModel.username" name="username" id="username" [required]="true">
+          <label for="username" class="form__label">Username</label>
+          @if (myForm.controls['username']?.invalid && (myForm.controls['username']?.dirty || myForm.controls['username']?.touched)) {
+            <div class="error-message">
+              <span *ngIf="myForm.controls['username']?.errors?.['required']">Username is required.</span>
+            </div>
+          }
+      </div>
+
+      <div class="form__div">
+          <input type="password" class="form__input" placeholder=" " [(ngModel)]="loginFormModel.password" name="password" id="password" [required]="true">
+          <label for="password" class="form__label">Password</label>
+          @if (myForm.controls['password']?.invalid && (myForm.controls['password']?.dirty || myForm.controls['password']?.touched)) {
+            <div class="error-message">
+              <span *ngIf="myForm.controls['password']?.errors?.['required']">Password is required.</span>
+            </div>
+          }
+      </div>
+
+      <button type="submit" class="form__button" [disabled]="!myForm.valid" (mouseenter)="showMessage($event)" (mouseleave)="hideMessage()">Sign In</button>
+      @if (showDisabledMessage) {
+        <div class="message">Please fill in all required fields.</div>
+      }
+   <!--    @if (soapService.isErrorExist()) {
+        <div class="error-message-incorrect">
+          <span>Username or password is incorrect. try again!</span>
+        </div>
+      } -->
+  </form>
+</div>

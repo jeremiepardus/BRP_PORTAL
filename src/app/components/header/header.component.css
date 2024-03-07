@@ -1,0 +1,24 @@
+.bandeau {
+  position: absolute;
+  background: url(/assets/header-bg.gif) repeat-x center bottom;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 37px;
+}
+
+.titrebandeau {
+  position: absolute;
+  font-family: Tahoma, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+  left: 120px;
+  top: 7px;
+}
+
+.imgBandeau {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
